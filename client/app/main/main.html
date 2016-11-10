@@ -1,0 +1,30 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>NUTRIRBOX SYSTEM</h1>
+    <p class="lead">Sistema de controle financeiro</p>
+    <img src="assets/images/logo_grande.png" alt="Alimentação saudável é aqui!">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Recursos:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+        <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}
+          <button type="button" class="close" ng-click="$ctrl.deleteThing(thing)">&times;</button>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="thing-form">
+    <label>Sincroniza em tempo real entre clientes</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Adicione uma coisa nova aqui." ng-model="$ctrl.newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addThing()"><i class="glyphicon glyphicon-floppy-disk"></i> Adicionar Novo</button>
+      </span>
+    </p>
+  </form>
+</div>
