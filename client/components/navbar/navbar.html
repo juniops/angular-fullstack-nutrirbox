@@ -13,12 +13,12 @@
       <ul class="nav navbar-nav">
         <li ng-repeat="item in $ctrl.menu" ui-sref-active="active"><a ui-sref="{{item.state}}">{{item.title}}</a></li>
         <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Usuários</a></li>
-        <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="menu">Cardápio</a></li>
       </ul>
 
 
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Cadastrar</a></li>
+        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="staff">staff</a></li>
         <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Entrar</a></li>
         <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Olá {{ $ctrl.getCurrentUser().name }}</p></li>
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings">
