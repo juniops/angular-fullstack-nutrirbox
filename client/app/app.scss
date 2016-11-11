@@ -4,24 +4,60 @@ $icon-font-path: '/assets/fonts/bootstrap/';
 $fa-font-path: '/assets/fonts/font-awesome/';
 @import '~font-awesome/scss/font-awesome';
 
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
+// Google Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 
-/**
- * App-wide Styles
- */
+// Variables, Mixins
+@import "scss/variables";
+@import "scss/mixins";
 
+// INSPINIA Theme Elements
+@import "scss/typography";
+@import "scss/navigation";
+@import "scss/top_navigation";
+@import "scss/buttons";
+@import "scss/badgets_labels";
+@import "scss/elements";
+@import "scss/sidebar";
+@import "scss/base";
+@import "scss/pages";
+@import "scss/chat";
+@import "scss/metismenu";
+@import "scss/spinners";
+
+// Landing page styles
+@import "scss/landing";
+
+// RTL Support
+@import "scss/rtl";
+
+// For demo only - config box style
+@import "scss/theme-config";
+
+// INSPINIA Skins
+@import "scss/skins";
+@import "scss/md-skin";
+
+// Media query style
+@import "scss/media";
+
+// Custom style
+// Your custom style to override base style
+@import "scss/custom";
+
+// Clear layout on print mode
+@media print {
+  nav.navbar-static-side {
+    display: none;
+  }
+
+  #page-wrapper {
+    margin: 0;
+  }
+}
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
-// Component styles are injected through gulp
-/* inject:scss */
-@import 'admin/admin';
-@import 'main/main';
-@import '../components/footer/footer';
-@import '../components/modal/modal';
-@import '../components/oauth-buttons/oauth-buttons';
-/* endinject */
