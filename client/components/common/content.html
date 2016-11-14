@@ -1,0 +1,9 @@
+<div id="wrapper">
+  <div ng-include="'navigation.html'"></div>
+  <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+    <div ng-include="'topnavbar.html'"></div>
+    <div ui-view></div>
+    <div ng-include="'footer.html'"></div>
+  </div>
+  <div ng-include="'right_sidebar.html'"></div>
+</div>

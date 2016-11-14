@@ -21,7 +21,6 @@ import _Auth from '../components/auth/auth.module';
 import account from './account';
 import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
-import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import staff from './staff/staff.component';
 import constants from './app.constants';
@@ -30,11 +29,11 @@ import socket from '../components/socket/socket.service';
 
 import './app.scss';
 
-angular.module('fullstackApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, navbar, footer, main, constants, socket, util, staff
-])
+angular.module('fullstackApp',
+  [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, socket, util, staff
+  ])
   .config(routeConfig)
-  .run(function($rootScope, $location, Auth) {
+  .run(function ($rootScope, $location, Auth) {
     'ngInject';
     // Redirect to login if route requires auth and you're not logged in
 

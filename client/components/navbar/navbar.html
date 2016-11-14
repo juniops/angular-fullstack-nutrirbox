@@ -1,30 +1,47 @@
-<div class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">nutrirbox</a>
-    </div>
-    <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in $ctrl.menu" ui-sref-active="active"><a ui-sref="{{item.state}}">{{item.title}}</a></li>
-        <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Usuários</a></li>
-      </ul>
+<div class="row border-bottom">
+  <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <ul class="nav navbar-top-links navbar-left">
+      <li ng-hide="$ctrl.isLoggedIn()"><a href="/"><i class="fa fa-home"></i> home</a></li>
+      <li><span class="m-r-sm text-muted welcome-message">sistema de controle financeiro</span></li>
+    </ul>
 
+    <ul class="nav navbar-top-links navbar-right">
+      <li ng-hide="$ctrl.isLoggedIn()"><a ui-sref="signup"><i class="fa fa-plus"></i> cadastre-se </a></li>
+      <li ng-hide="$ctrl.isLoggedIn()"><a ui-sref="login"><i class="fa fa-sign-in"></i> entrar |</a></li>
+      <li ng-show="$ctrl.isLoggedIn()"><span class="m-r-sm text-muted">Olá {{ $ctrl.getCurrentUser().name }} </span></li>
+      <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout"><i class="fa fa-sign-out"></i> Sair |</a></li>
+    </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Cadastrar</a></li>
-        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="staff">staff</a></li>
-        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Entrar</a></li>
-        <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Olá {{ $ctrl.getCurrentUser().name }}</p></li>
-        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings">
-          <span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Sair</a></li>
-      </ul>
-    </div>
-  </div>
+  </nav>
 </div>
+
+<!--<div class="navbar navbar-default navbar-static-top">-->
+<!--<div class="container">-->
+<!--<div class="navbar-header">-->
+<!--<button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">-->
+<!--<span class="sr-only">Toggle navigation</span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--</button>-->
+<!--<a href="/" class="navbar-brand">nutrirbox</a>-->
+<!--</div>-->
+<!--<div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li ng-repeat="item in $ctrl.menu" ui-sref-active="active"><a ui-sref="{{item.state}}">{{item.title}}</a></li>-->
+<!--<li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Usuários</a></li>-->
+<!--</ul>-->
+
+
+<!--<ul class="nav navbar-nav navbar-right">-->
+<!--<li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Cadastrar</a></li>-->
+<!--<li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="staff">staff</a></li>-->
+<!--<li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Entrar</a></li>-->
+<!--<li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Olá {{ $ctrl.getCurrentUser().name }}</p></li>-->
+<!--<li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings">-->
+<!--<span class="glyphicon glyphicon-cog"></span></a></li>-->
+<!--<li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Sair</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
